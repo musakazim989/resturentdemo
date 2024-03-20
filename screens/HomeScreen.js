@@ -1,5 +1,6 @@
 import * as Icon from 'react-native-feather';
 import {SafeAreaView, StatusBar, TextInput, View, Text} from 'react-native';
+import {themeColors} from '../theme';
 
 export const HomeScreen = () => {
   return (
@@ -7,7 +8,7 @@ export const HomeScreen = () => {
       <StatusBar barStyle="dark-content" />
       <View className="flex-row items-center space-x-2 px-4 pb-2">
         <View
-          className="flex-row flex-1 items-center mt-3 p-3 border rounded-full border-gray-300
+          className="flex-row flex-1 items-center mt-3 px-3 border rounded-full border-gray-300
           ">
           <Icon.Search height="25" width="25" stroke="gray" />
           <TextInput placeholder="Resturants" className="ml-2 flex-1 " />
@@ -16,12 +17,15 @@ export const HomeScreen = () => {
           </View>
           <Text className="text-gray-600">New York, NYC</Text>
         </View>
-        <View className="p3 rounded-full bg-gray-300">
+        <View
+          style={{backgroundColor: themeColors.bgColor(1)}}
+          className="mt-2 p-2 rounded-full ">
           <Icon.Sliders
             height="25"
             width="25"
             strokeWidth={2.5}
             stroke="white"
+            className="  "
           />
         </View>
       </View>
