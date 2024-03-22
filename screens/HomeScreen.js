@@ -1,11 +1,20 @@
 import * as Icon from 'react-native-feather';
-import {SafeAreaView, StatusBar, TextInput, View, Text} from 'react-native';
+import {
+  SafeAreaView,
+  StatusBar,
+  TextInput,
+  View,
+  Text,
+  ScrollView,
+} from 'react-native';
 import {themeColors} from '../theme';
+import Categories from '../components/categories';
 
 export const HomeScreen = () => {
   return (
     <SafeAreaView>
       <StatusBar barStyle="dark-content" />
+      {/* search bar */}
       <View className="flex-row items-center space-x-2 px-4 pb-2">
         <View
           className="flex-row flex-1 items-center mt-3 px-3 border rounded-full border-gray-300
@@ -19,7 +28,7 @@ export const HomeScreen = () => {
         </View>
         <View
           style={{backgroundColor: themeColors.bgColor(1)}}
-          className="mt-2 p-2 rounded-full ">
+          className="mt-3 p-2 rounded-full ">
           <Icon.Sliders
             height="25"
             width="25"
@@ -29,6 +38,14 @@ export const HomeScreen = () => {
           />
         </View>
       </View>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          paddingBottom: 20,
+        }}>
+
+          <Categories />
+        </ScrollView>
     </SafeAreaView>
   );
 };
