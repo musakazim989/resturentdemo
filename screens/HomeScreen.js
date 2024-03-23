@@ -8,7 +8,9 @@ import {
   ScrollView,
 } from 'react-native';
 import {themeColors} from '../theme';
-import Categories from '../components/categories';
+import {Categories} from '../components/categories';
+import {FeaturedRow} from '../components/featuredRow';
+import {featured} from '../constants/index';
 
 export const HomeScreen = () => {
   return (
@@ -38,14 +40,33 @@ export const HomeScreen = () => {
           />
         </View>
       </View>
+
+      {/* mian */}
+
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{
           paddingBottom: 20,
         }}>
+        {/* categories */}
 
-          <Categories />
-        </ScrollView>
+        <Categories />
+
+        {/* featured */}
+
+        <View className="mt-5">
+          {[featured, featured, featured].map((item, index) => {
+            return (
+              <FeaturedRow
+                key={index}
+                title={item.title}
+                resturants={item.resturants}
+                description={item.description}
+              />
+            );
+          })}
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
