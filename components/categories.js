@@ -17,9 +17,7 @@ export const Categories = () => {
           let isActive = category.id === activeCategory;
 
           let btnClass = isActive ? 'bg-gray-300' : 'bg-gray-200';
-          {
-            console.log(btnClass);
-          }
+
           let textClass = isActive
             ? 'font-semibold text-gray-800'
             : 'text-gray-500';
