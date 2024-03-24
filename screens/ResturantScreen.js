@@ -2,6 +2,7 @@ import {useNavigation, useRoute} from '@react-navigation/native';
 import {View, Text, ScrollView, Image, TouchableOpacity} from 'react-native';
 import * as Icon from 'react-native-feather';
 import {themeColors} from '../theme';
+import {DishRow} from '../components/dishRow';
 
 export function ResturantScreen() {
   const {params} = useRoute();
@@ -47,6 +48,13 @@ export function ResturantScreen() {
             </View>
             <Text className="text-gray-500 mt-2">{item.description}</Text>
           </View>
+        </View>
+        <View className="pb-36 bg-white">
+          <Text className="px-4 py-4 text-2xl font-bold">Menu</Text>
+          {/* dishes */}
+          {item.dishes.map((dish, index) => {
+            return <DishRow item={{...dish}} key={index} />;
+          })}
         </View>
       </ScrollView>
     </View>
