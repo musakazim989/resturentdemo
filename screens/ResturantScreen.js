@@ -3,6 +3,7 @@ import {View, Text, ScrollView, Image, TouchableOpacity} from 'react-native';
 import * as Icon from 'react-native-feather';
 import {themeColors} from '../theme';
 import {DishRow} from '../components/dishRow';
+import {CartIcon} from '../components/cartIcon';
 
 export function ResturantScreen() {
   const {params} = useRoute();
@@ -11,6 +12,7 @@ export function ResturantScreen() {
   // console.log('resturant: ', item);
   return (
     <View>
+      <CartIcon />
       <ScrollView>
         <View className="relative">
           <Image className="w-full h-72" source={item.image} />

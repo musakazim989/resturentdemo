@@ -31,7 +31,7 @@ export const DishRow = ({item}) => {
                 stroke={'white'}
               />
             </TouchableOpacity>
-            <Text className="px-3"> {2}</Text>
+            <Text className="px-3">{2}</Text>
             <TouchableOpacity
               className="p-1 rounded-full"
               style={{
