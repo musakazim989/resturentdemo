@@ -1,4 +1,4 @@
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image, TouchableOpacity, ScrollView} from 'react-native';
 import React from 'react';
 import {featured} from '../constants';
 import {themeColors} from '../theme';
@@ -40,6 +40,40 @@ export const CartScreen = () => {
           </TouchableOpacity>
         </View>
       </View>
+
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          paddingBottom: 50,
+        }}
+        className="bg-white pt-5">
+        {resturant.dishes.map((dish, index) => {
+          return (
+            <View
+              key={index}
+              className="flex-row items-center space-x-3 py-3 px-2 bg-white rounded-3xl mx-2 mb-3 shadow-md">
+              <Text className="font-bold" style={{color: themeColors.text}}>
+                2 x
+              </Text>
+              <Image className="h-14 w-14 rounded-full" source={dish.image} />
+              <Text className="flex-1 font-bold text-gray-700">
+                {dish.name}
+              </Text>
+              <Text className="font-semibold text-base ">${dish.price}</Text>
+              <TouchableOpacity
+                className="p-1 rounded-full"
+                style={{backgroundColor: themeColors.bgColor(1)}}>
+                <Icon.Minus
+                  strokeWidth={2}
+                  height={20}
+                  width={20}
+                  stroke="white"
+                />
+              </TouchableOpacity>
+            </View>
+          );
+        })}
+      </ScrollView>
     </View>
   );
 };
