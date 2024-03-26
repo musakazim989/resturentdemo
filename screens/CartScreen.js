@@ -92,6 +92,7 @@ export const CartScreen = () => {
           <Text className="text-gray-700 font-extrabold">$22</Text>
         </View>
         <TouchableOpacity
+        onPress={()=>navigation.navigate('OrderPreparing')}
           style={{backgroundColor: themeColors.bgColor(1)}}
           className="p-3 rounded-full">
           <Text className="text-white text-center font-bold text-lg">
