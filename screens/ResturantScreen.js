@@ -1,5 +1,12 @@
 import {useNavigation, useRoute} from '@react-navigation/native';
-import {View, Text, ScrollView, Image, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+  StatusBar,
+} from 'react-native';
 import * as Icon from 'react-native-feather';
 import {themeColors} from '../theme';
 import {DishRow} from '../components/dishRow';
@@ -13,6 +20,10 @@ export function ResturantScreen() {
   return (
     <View>
       <CartIcon />
+      <StatusBar
+        barStyle="light-content"
+        //  backgroundColor="orange"
+      />
       <ScrollView>
         <View className="relative">
           <Image className="w-full h-72" source={item.image} />
