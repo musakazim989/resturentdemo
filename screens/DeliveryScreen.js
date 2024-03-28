@@ -19,14 +19,17 @@ export const DeliveryScreen = () => {
         initialRegion={{
           latitude: resturant.lat,
           longitude: resturant.lang,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
+          latitudeDelta: 0.01,
+          longitudeDelta: 0.01,
         }}
         style={styles.map}
         // className="flex-1"
       >
         <Marker
-          coordinate={{latitude: resturant.lat, longitude: resturant.lang}}
+          coordinate={{
+            latitude: resturant.lat,
+            longitude: resturant.lang,
+          }}
         />
       </MapView>
     </View>
