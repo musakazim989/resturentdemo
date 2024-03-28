@@ -1,4 +1,5 @@
 {
   "name": "resturentdemo",
-  "displayName": "resturentdemo"
+  "displayName": "resturentdemo",
+  "API_KEY": "android.config.googleMaps.apiKey"
 }
