@@ -54,7 +54,7 @@ export const HomeScreen = () => {
 
         {/* featured */}
 
-        <View className="mt-5">
+        <View className="mt-5 pb-14">
           {[featured, featured, featured].map((item, index) => {
             return (
               <FeaturedRow
