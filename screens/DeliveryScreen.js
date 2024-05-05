@@ -11,7 +11,6 @@ import * as Icon from 'react-native-feather';
 export const DeliveryScreen = () => {
   const resturant = featured.resturants[0];
   const navigation = useNavigation();
-  console.log(resturant.lat, resturant.lang);
   return (
     <View className="flex-1 relative">
       {/* map view */}

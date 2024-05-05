@@ -4,9 +4,11 @@ import {featured} from '../constants';
 import {themeColors} from '../theme';
 import * as Icon from 'react-native-feather';
 import {useNavigation} from '@react-navigation/native';
+import {useSelector} from 'react-redux';
+import {selectResturant} from '../slices/resturantSlice';
 
 export const CartScreen = () => {
-  const resturant = featured.resturants[0];
+  const resturant = useSelector(selectResturant);
   const navigation = useNavigation();
   return (
     <View className="bg-white flex-1">
@@ -92,7 +94,7 @@ export const CartScreen = () => {
           <Text className="text-gray-700 font-extrabold">$22</Text>
         </View>
         <TouchableOpacity
-        onPress={()=>navigation.navigate('OrderPreparing')}
+          onPress={() => navigation.navigate('OrderPreparing')}
           style={{backgroundColor: themeColors.bgColor(1)}}
           className="p-3 rounded-full">
           <Text className="text-white text-center font-bold text-lg">
